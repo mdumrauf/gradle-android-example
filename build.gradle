@@ -16,4 +16,5 @@ buildscript {
 
 dependencies {
     compile group: 'com.google.guava', name: 'guava', version: '13.0.1'
+    testRuntime group: 'junit', name: 'junit', version: '4.10'
 }
