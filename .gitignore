@@ -1,0 +1,11 @@
+.checkstyle
+.classpath
+.project
+.settings
+bin/
+target/
+gen/
+libs/
+project.properties
+local.properties
+
