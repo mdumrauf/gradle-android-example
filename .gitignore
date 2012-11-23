@@ -2,10 +2,12 @@
 .classpath
 .project
 .settings
-bin/
-target/
-gen/
-libs/
+.gradle
+build
+bin
+target
+gen
+libs
 project.properties
 local.properties
 
