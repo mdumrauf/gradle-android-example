@@ -32,12 +32,11 @@ eclipse {
   classpath {
     file {
       whenMerged { classpath ->
-        classpath.entries.removeAll {
-          it.path.contains('hamcrest-core')   ||
-          it.path.contains('httpcomponents')  ||
-          it.path.contains('commons-logging') ||
-          it.path.contains('commons-codec')   ||
-          it.path.contains('sqlite-jdbc')
+        classpath.entries.each {
+          def entry = it.toString()
+          if (!entry.contains('guava') && entry.startsWith('Library') && entry.contains('exported')) {
+            it.exported = false
+          }
         }
       }
     }
