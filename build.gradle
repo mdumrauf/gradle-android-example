@@ -16,8 +16,10 @@ repositories {
 }
 
 dependencies {
+  compile 'com.google.android:android:4.1.1.4'
   compile 'com.google.guava:guava:13.0'
   testCompile 'junit:junit:4.10'
+  testCompile 'com.pivotallabs:robolectric:1.1'
 }
 
 test {
@@ -30,14 +32,11 @@ eclipse {
   classpath {
     file {
       whenMerged { classpath ->
-        classpath.entries.removeAll {
-          it.path.contains('hamcrest-core')   ||
-          it.path.contains('httpcomponents')  ||
-          it.path.contains('commons-logging') ||
-          it.path.contains('commons-codec')   ||
-          it.path.contains('objenesis')       ||
-          it.path.contains('sqlite-jdbc')     ||
-          it.path.contains('javassist')
+        classpath.entries.each {
+          def entry = it.toString()
+          if (!entry.contains('guava') && entry.startsWith('Library') && entry.contains('exported')) {
+            it.exported = false
+          }
         }
       }
     }
