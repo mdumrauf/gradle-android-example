@@ -13,6 +13,7 @@ apply plugin: 'eclipse'
 
 repositories {
   mavenCentral()
+  mavenRepo(url: new File(System.properties['user.home'], '.m2/repository').toURI().toURL())
 }
 
 dependencies {
