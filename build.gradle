@@ -25,3 +25,21 @@ test {
         println "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
     }
 }
+
+eclipse {
+  classpath {
+    file {
+      whenMerged { classpath ->
+        classpath.entries.removeAll {
+          it.path.contains('hamcrest-core')   ||
+          it.path.contains('httpcomponents')  ||
+          it.path.contains('commons-logging') ||
+          it.path.contains('commons-codec')   ||
+          it.path.contains('objenesis')       ||
+          it.path.contains('sqlite-jdbc')     ||
+          it.path.contains('javassist')
+        }
+      }
+    }
+  }
+}
