@@ -13,10 +13,12 @@ apply plugin: 'eclipse'
 
 repositories {
   mavenCentral()
+  mavenRepo(url: new File(System.properties['user.home'], '.m2/repository').toURI().toURL())
 }
 
 dependencies {
   compile 'com.google.android:android:4.1.1.4'
+  compile 'com.google.android.maps:maps:16_r3'
   compile 'com.google.guava:guava:13.0'
   testCompile 'junit:junit:4.10'
   testCompile 'com.pivotallabs:robolectric:1.1'
