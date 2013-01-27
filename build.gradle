@@ -1,20 +1,21 @@
-apply plugin: 'eclipse'
-apply plugin: 'android'
-
-repositories {
-    mavenCentral()
-    maven {
-        url "https://oss.sonatype.org/content/repositories/snapshots"
-    }
-}
 
 buildscript {
-    dependencies {
-        classpath files('/home/matias/workspace/hackatons/gradle-android-plugin/build/libs/gradle-android-plugin-1.2.2-SNAPSHOT.jar')
-    }
+	repositories {
+	  mavenCentral()
+	}
+
+  dependencies {
+    classpath 'org.gradle.api.plugins:gradle-android-plugin:1.2.1'
+  }
+}
+apply plugin: 'android'
+apply plugin: 'eclipse'
+
+repositories {
+  mavenCentral()
 }
 
 dependencies {
-    compile group: 'com.google.guava', name: 'guava', version: '13.0.1'
-    testRuntime group: 'junit', name: 'junit', version: '4.10'
+  compile 'com.google.guava:guava:13.0'
+  testCompile 'junit:junit:4.10'
 }
