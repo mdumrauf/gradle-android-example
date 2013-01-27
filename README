@@ -16,6 +16,8 @@ and tunes eclipse plugin to enable running it either from Eclipse IDE or from co
 		* Replace the *tools/* folder with the one in the package downloaded
 		* Restart Eclipse
 
+- Maps dependency deployed in your local maven repository with https://github.com/mosabua/maven-android-sdk-deployer.
+
 
 == Gradle Tasks ==
 
