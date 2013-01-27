@@ -24,8 +24,13 @@ public class MainActivityTest {
 	}
 
 	@Test
+	public void testGetAppNameFromResourceString() {
+		assertEquals("Gradle Android Example", activity.getString(R.string.app_name));
+	}
+
+	@Test
 	public void testTextViewContent() {
-		assertEquals(activity.getString(R.string.hello_world), textView.getText().toString());
+		assertEquals("4,2,8", textView.getText().toString());
 	}
 
 }
