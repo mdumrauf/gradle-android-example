@@ -1,3 +1,6 @@
+apkLibs = [ ActionBarSherlock: 'git://github.com/JakeWharton/ActionBarSherlock.git' ]
+
+apply from: 'https://raw.github.com/flbulgarelli/gradle-apklib-plugin/raw-build/build.gradle'
 
 buildscript {
 	repositories {
